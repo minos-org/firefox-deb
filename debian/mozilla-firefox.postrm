@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+update-alternatives --remove x-www-browser /usr/bin/firefox || true
+
+[ -h /usr/bin/firefox ] && rm -rf /usr/bin/firefox
+
+if [ -f /usr/bin/firefox.backup ]; then
+    if [ -h /usr/bin/firefox.backup ]; then
+        rm -rf /usr/bin/firefox.backup
+    else
+        echo "getting back firefox bin backup ..." >&2
+        mv /usr/bin/firefox.backup /usr/bin/firefox
+    fi
+fi

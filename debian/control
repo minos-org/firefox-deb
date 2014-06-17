@@ -1,0 +1,20 @@
+Source: mozilla-firefox
+Section: web
+Priority: optional
+Maintainer: Javier P.L. <chilicuil@ubuntu.com>
+Build-Depends: debhelper (>= 7.0.5), libx11-6, libgtk2.0-0, libatk1.0-0, libpango1.0-0, libfreetype6, libfontconfig1, libgdk-pixbuf2.0-0, libcairo2, libasound2, libxrender1, libdbus-glib-1-2, libxt6, libxext6 
+Standards-Version: 3.9.4
+Homepage: http://www.mozilla.org/
+Vcs-Browser: https://github.com/mozilla/gecko-dev
+
+Package: mozilla-firefox
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+#let's asume ppl wont try to use mozilla-firefox on uncommon envs and let's save them some dependences
+#Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6, libgtk2.0-0, libatk1.0-0, libpango1.0-0, libfreetype6, libfontconfig1, libgdk-pixbuf2.0-0, libcairo2, libasound2, libxrender1, libdbus-glib-1-2, libxt6, libxext6 
+Description:  Free and open-source web browser.
+ Mozilla Firefox is a free and open-source web browser developed for Windows,
+ OS X, and Linux, with a mobile version for Android, by the Mozilla Foundation
+ and its subsidiary, the Mozilla Corporation.  Firefox uses the Gecko layout
+ engine to render web pages, which implements current and anticipated web
+ standards

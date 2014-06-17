@@ -1,0 +1,17 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: firefox
+Upstream-Contact: https://www.mozilla.org/en-US/contact/spaces/
+Source: http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/
+
+Files: *
+Copyright: Copyright (C) 2014 Mozilla
+License: Mozilla Public License v. 2.0
+
+Files: debian/*
+Copyright: Copyright (c) 2014, Javier P.L. <chilicuil@ubuntu.com>
+License: Mozilla Public License v. 2.0
+
+License: Mozilla Public License v. 2.0
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
