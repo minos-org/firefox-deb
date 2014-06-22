@@ -1,14 +1,20 @@
 Debian packaging for mozilla-firefox
 ------------------------------------
 
-A quick summary in how update the Debian packaging:
+Steps to build this package:
 
-    git clone --dept=1 https://github.com/minos-org/mozilla-firefox-deb
-    cd mozilla-firefox-deb
-    debian/rules get-orig-source
-    mv debian mozilla-firefox-*
-    cd mozilla-firefox-*
-    [ Make here some adaptations, like updating debian/patches, if needed ]
-    [ add more details if required, $EDITOR debian/changelog ]
-    debuild -S
-    upload .dsc | .changes files
+```
+$ git clone --dept=1 https://github.com/minos-org/mozilla-firefox-deb
+$ cd mozilla-firefox-deb
+$ dch -i #insert proper upstream version (1:$(date +%Y%m%d%H%M)+git7digitsHash-minos)
+$ debian/rules get-orig-source
+$ mv debian mozilla-firefox-*
+$ cd mozilla-firefox-*
+
+[ Optional, make some adaptations, like updating debian/patches, if needed ]
+[ document additional changes if required, $EDITOR debian/changelog ]
+
+$ debuild -S
+
+[ Build .dsc (pbuilder) || Upload .changes file (dput) ]
+```
