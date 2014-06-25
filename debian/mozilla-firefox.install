@@ -1,1 +1,2 @@
 firefox opt
+debian/firefox.desktop usr/share/applications
