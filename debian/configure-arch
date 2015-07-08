@@ -19,7 +19,7 @@ _arch()
     printf "%s" "${_arch_var_arch}"
 }
 
-tar jxf firefox$(_arch).tar.bz2
+tar jxf firefox27/firefox$(_arch).tar.bz2
 mv  firefox$(_arch) firefox
 
-# vim: set ts=8 sw=4 tw=0 ft=sh : 
+# vim: set ts=8 sw=4 tw=0 ft=sh :

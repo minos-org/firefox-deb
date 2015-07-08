@@ -24,12 +24,10 @@ get-orig-source:
 	rm -rf debian/tmp; mkdir debian/tmp
 	#cd debian/tmp; wget http://f.javier.io/rep/bin/firefox32.tar.bz2
 	#cd debian/tmp; wget http://f.javier.io/rep/bin/firefox64.tar.bz2
-	cd debian/tmp; wget https://github.com/minos-org/mozilla-firefox/archive/${DEB_MASTER_VERSION}.tar.gz
-	#cd debian/tmp; mkdir mozilla-firefox-${DEB_UPSTREAM_VERSION}
-	#cd debian/tmp; mv firefox*tar.bz2 mozilla-firefox-${DEB_UPSTREAM_VERSION}
+	cd debian/tmp; wget https://github.com/minos-org/firefox/archive/${DEB_MASTER_VERSION}.tar.gz
 	cd debian/tmp; tar xvzf ${DEB_MASTER_VERSION}.tar.gz
-	cd debian/tmp; mv mozilla-firefox-* mozilla-firefox-${DEB_UPSTREAM_VERSION}
-	cd debian/tmp; tar cvJf mozilla-firefox_${DEB_UPSTREAM_VERSION}.orig.tar.xz mozilla-firefox-${DEB_UPSTREAM_VERSION}
-	mv debian/tmp/mozilla-firefox_${DEB_UPSTREAM_VERSION}.orig.tar.xz .
-	mv debian/tmp/mozilla-firefox-${DEB_UPSTREAM_VERSION} .
+	cd debian/tmp; mv firefox-* firefox27-${DEB_UPSTREAM_VERSION}
+	cd debian/tmp; tar cvJf firefox27_${DEB_UPSTREAM_VERSION}.orig.tar.xz firefox27-${DEB_UPSTREAM_VERSION}
+	mv debian/tmp/firefox27_${DEB_UPSTREAM_VERSION}.orig.tar.xz .
+	mv debian/tmp/firefox27-${DEB_UPSTREAM_VERSION} .
 	rm -rf debian/tmp

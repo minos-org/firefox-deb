@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+update-alternatives --remove x-www-browser /usr/bin/firefox || true
+
+[ -h /usr/bin/firefox ] && rm -rf /usr/bin/firefox
+
+for f in /usr/bin/firefox.minos-backup*; do
+    :
+done
+
+if [ -f "${f}" ]; then
+    if [ -h "${f}" ]; then
+        rm -rf "${f}"
+    else
+        echo "setting up latest firefox-bin backup ..." >&2
+        mv "${f}" /usr/bin/firefox
+    fi
+fi

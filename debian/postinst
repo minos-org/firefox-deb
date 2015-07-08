@@ -6,7 +6,7 @@ case "$1" in
     configure)
         if [ -f /usr/bin/firefox ]; then
             echo "firefox bin was detected!, creating backup ..." >&2
-            mv /usr/bin/firefox /usr/bin/firefox.backup
+            mv /usr/bin/firefox /usr/bin/firefox.minos-backup-"$(date +%Y-%m-%d-%H:%M:%S)"
             ln -s /opt/firefox/firefox /usr/bin/firefox
         else
             ln -s /opt/firefox/firefox /usr/bin/firefox
