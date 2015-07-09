@@ -1,2 +1,2 @@
-firefox opt
+firefox/firefox28/firefox opt
 debian/firefox.desktop usr/share/applications

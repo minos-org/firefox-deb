@@ -1,15 +1,15 @@
-Debian packaging for firefox27
+Debian packaging for firefox
 ------------------------------
 
 Steps to build this package:
 
 ```
-$ git clone --dept=1 https://github.com/minos-org/firefox27-deb
-$ cd firefox27-deb
+$ git clone --dept=1 https://github.com/minos-org/firefox-deb
+$ cd firefox-deb
 $ dch -i #insert proper upstream version (1:$(date +%Y%m%d%H%M)+git7digitsHash-minos)
 $ debian/rules get-orig-source
-$ mv debian firefox27-*
-$ cd firefox27-*
+$ mv debian firefox-*
+$ cd firefox-*
 
 [ Optional, make some adaptations, like updating debian/patches, if needed ]
 [ document additional changes if required, $EDITOR debian/changelog ]
