@@ -19,7 +19,7 @@ _arch()
     printf "%s" "${_arch_var_arch}"
 }
 
-for dir in firefox/firefox*; do
+for dir in firefox*; do
     if [ -f "${dir}/firefox$(_arch).tar.bz2" ]; then
         (cd "${dir}" && tar jxf firefox$(_arch).tar.bz2 && mv "firefox$(_arch)" firefox)
     fi
