@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+        if [ -f /usr/bin/firefox ]; then
+            echo "firefox bin was detected!, creating backup ..." >&2
+            mv /usr/bin/firefox /usr/bin/firefox.minos-backup-"$(date +%Y-%m-%d-%H:%M:%S)"
+            ln -s /opt/firefox/firefox /usr/bin/firefox
+        else
+            ln -s /opt/firefox/firefox /usr/bin/firefox
+        fi
+        update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/firefox 200
+        ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+        # Nothing to do because we didn't take any action in the prerm
+        ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
